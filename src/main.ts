@@ -18,6 +18,8 @@ async function logout(){
 	if(error!==null){
 		console.error(error)
 	}
+	const {data,error:_error}=await supabase.auth.getSession()
+	console.log(data===null)
 }
 async function handle(){
 	const {data,error}=await supabase.auth.getClaims()
