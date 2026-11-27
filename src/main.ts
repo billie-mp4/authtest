@@ -40,6 +40,10 @@ const show_logged_in=(authstate:LoggedIn)=>{
 	btn.textContent='logout'
 	app.appendChild(btn)
 	btn.onclick=async()=>{const{error:_error}=await supabase.auth.signOut()}
+	let href=document.createElement('a')
+	href.href='./page1/index.html'
+	href.textContent='page1'
+	app.appendChild(href)
 	console.log(authstate)
 }
 const show_logged_out=(authstate:LoggedOut)=>{
@@ -47,6 +51,10 @@ const show_logged_out=(authstate:LoggedOut)=>{
 	btn.textContent='login'
 	app.appendChild(btn)
 	btn.onclick=async()=>{login(supabase)}
+	let href=document.createElement('a')
+	href.href='./page1/index.html'
+	href.textContent='page1'
+	app.appendChild(href)
 	console.log(authstate)
 }
 const show_auth_state=(authstate:AuthState)=>{
